@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大族激光小族吉祥物 - 官方网站</title>
+    <!-- 引入外部资源 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 配置Tailwind自定义主题 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066CC', // 大族激光品牌蓝
+                        secondary: '#666666', // 工业灰
+                        accent: '#FF6600', // 活力橙（吉祥物点缀色）
+                        light: '#F5F7FA',
+                        dark: '#1A1A1A'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+            }
+            .emoji-scale {
+                @apply transition-transform duration-300 hover:scale-110;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light font-sans text-dark">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- 品牌Logo与名称 -->
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+                    <i class="fa fa-star-o text-xl"></i>
+                </div>
+                <span class="text-xl font-bold text-primary">大族激光 · 小族吉祥物</span>
+            </div>
+
+            <!-- 桌面端导航 -->
+            <nav class="hidden md:flex gap-8">
+                <a href="#home" class="text-primary font-medium hover:text-accent transition-colors">首页</a>
+                <a href="#intro" class="text-secondary font-medium hover:text-accent transition-colors">吉祥物介绍</a>
+                <a href="#emoji" class="text-secondary font-medium hover:text-accent transition-colors">表情包专区</a>
+                <a href="#samples" class="text-secondary font-medium hover:text-accent transition-colors">延伸样机</a>
+                <a href="#contact" class="text-secondary font-medium hover:text-accent transition-colors">联系我们</a>
+            </nav>
+
+            <!-- 移动端菜单按钮 -->
+            <button id="menuBtn" class="md:hidden text-secondary text-2xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- 移动端导航菜单 -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-2 flex flex-col gap-3">
+                <a href="#home" class="py-2 text-primary font-medium hover:text-accent transition-colors">首页</a>
+                <a href="#intro" class="py-2 text-secondary font-medium hover:text-accent transition-colors">吉祥物介绍</a>
+                <a href="#emoji" class="py-2 text-secondary font-medium hover:text-accent transition-colors">表情包专区</a>
+                <a href="#samples" class="py-2 text-secondary font-medium hover:text-accent transition-colors">延伸样机</a>
+                <a href="#contact" class="py-2 text-secondary font-medium hover:text-accent transition-colors">联系我们</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首页英雄区 -->
+    <section id="home" class="relative py-20 md:py-32" style="background: url('images/xiaozu-bg1.png') center/contain no-repeat; background-color: #f5f5f5;">
+    <!-- 背景图（保持完整显示） -->
+    <div class="absolute inset-0 z-0">
+        <img src="images/xiaozu-bg.jpg" alt="背景图" class="w-full h-full object-cover">
+    </div>
+    <!-- 半透明遮罩（提升文字可读性） -->
+    <div class="absolute inset-0 z-10 bg-black/20 backdrop-blur-sm"></div>
+    <!-- 内容容器（居中布局，避免遮挡） -->
+    <div class="container mx-auto px-4 relative z-20">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <!-- 文字区域（左对齐，避免遮挡） -->
+            <div class="md:w-1/2 text-white">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-shadow mb-4">
+                    大族激光<br>小族吉祥物
+                </h1>
+                <p class="text-lg md:text-xl mb-8 text-white/90">
+                    科技与萌趣的完美融合，大族激光品牌文化新符号
+                </p>
+                <div class="flex gap-4">
+                    <a href="#emoji" class="bg-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-accent/90 transition-colors">
+                        查看表情包 <i class="fa fa-smile-o ml-1"></i>
+                    </a>
+                    <a href="#samples" class="bg-white/20 text-white px-4 py-3 rounded-lg font-medium hover:bg-white/30 transition-colors backdrop-blur-sm">
+                        浏览样机 <i class="fa fa-image ml-1"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- 小族图标（右侧独立容器，避免遮挡） -->
+            <div class="md:w-1/2 flex justify-center">
+                <div class="w-64 h-64 md:w-80 md:h-80 bg-white rounded-full flex items-center justify-center shadow-2xl">
+                    <img src="images/xiaozu-main.png" alt="小族吉祥物主形象" class="w-56 h-56 md:w-72 md:h-72 object-contain rounded-full">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            <!-- 装饰元素 -->
+            <div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-light to-transparent"></div>
+        </section>
+
+<!-- 吉祥物介绍 -->
+<section id="intro" class="py-16 md:py-24">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-primary mb-4">小族吉祥物设计理念</h2>
+            <div class="w-20 h-1 bg-accent mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+<div class="space-y-4 bg-white p-1">
+    <!-- 设计灵感模块 -->
+    <div class="bg-white p-6 rounded-lg card-hover border-0">
+        <h3 class="text-lg font-bold text-primary mb-2 flex items-center">
+            <i class="fa fa-lightbulb-o text-accent mr-2"></i> 设计灵感
+        </h3>
+        <p class="text-sm text-secondary">
+            小族吉祥物以激光科技为核心灵感，头部融入激光光束的流线型设计，身体采用工业机器人的简约轮廓，配色选用大族激光品牌蓝与活力橙，既体现科技属性，又增添萌趣感。
+        </p>
+    </div>
+
+    <!-- 形象寓意模块 -->
+    <div class="bg-white p-6 rounded-lg card-hover border-0 my-1">
+        <h3 class="text-lg font-bold text-primary mb-2 flex items-center">
+            <i class="fa fa-heart-o text-accent mr-2"></i> 形象寓意
+        </h3>
+        <p class="text-sm text-secondary">
+            小族的大眼睛代表对科技的探索与洞察，张开的双臂象征大族激光拥抱客户、拥抱创新的理念，整体形象传递出“科技赋能、温暖服务”的品牌价值观。
+        </p>
+    </div>
+
+    <!-- 品牌关联模块 -->
+    <div class="bg-white p-6 rounded-lg card-hover border-0">
+        <h3 class="text-lg font-bold text-primary mb-2 flex items-center">
+            <i class="fa fa-link text-accent mr-2"></i> 品牌关联
+        </h3>
+        <p class="text-sm text-secondary">
+            作为大族激光的品牌吉祥物，小族广泛应用于品牌宣传、产品发布会、客户互动等场景，成为连接品牌与用户的情感纽带，助力大族激光年轻化品牌形象的打造。
+        </p>
+    </div>
+</div>
+            </div>
+            <!-- 修改图片容器样式，放大图片至红色框选大小 -->
+            <div class="order-1 md:order-2 flex justify-center">
+                <div class="w-full max-w-2xl"> <!-- 增加最大宽度 -->
+                    <img src="images/xiaozu-intro.png" alt="小族吉祥物设计细节" class="rounded-lg shadow-xl w-full h-auto card-hover">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- 表情包专区（10个表情包，可直接修改文字！） -->
+        <section id="emoji" class="py-16 md:py-24 bg-light/50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-primary mb-4">小族吉祥物新年表情包</h2>
+                    <p class="text-secondary text-lg mb-4">萌趣小族，玩转社交，扫码/点击即可下载使用</p>
+                    <div class="w-20 h-1 bg-accent mx-auto"></div>
+                </div>
+
+                <!-- 表情包分类标签 -->
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                                <button class="emoji-tab active bg-primary text-white px-4 py-2 rounded-full text-sm font-medium">全部</button>
+</div>
+
+                <!-- 表情包展示网格（10个，修复下载功能） -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    <!-- 表情包1 -->
+                    <div class="emoji-item all 日常问候 bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <img src="images/xiaozu-emoji1.png" alt="小族-文字描述1" class="w-full h-40 object-contain p-4 emoji-scale">
+                        <div class="p-3 text-center">
+                            <h4 class="font-medium text-secondary">新年好</h4>
+                            <a href="images/xiaozu-emoji1.png" download="小族-新年好.png" class="mt-2 bg-primary/10 text-primary px-3 py-1 rounded text-sm hover:bg-primary hover:text-white transition-colors inline-block">
+                                下载 <i class="fa fa-download ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 表情包2 -->
+                    <div class="emoji-item all 工作办公 bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <img src="images/xiaozu-emoji2.png" alt="小族-文字描述2" class="w-full h-40 object-contain p-4 emoji-scale">
+                        <div class="p-3 text-center">
+                            <h4 class="font-medium text-secondary">丰衣族食</h4>
+                            <a href="images/xiaozu-emoji2.png" download="小族-丰衣族食.png" class="mt-2 bg-primary/10 text-primary px-3 py-1 rounded text-sm hover:bg-primary hover:text-white transition-colors inline-block">
+                                下载 <i class="fa fa-download ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 表情包3 -->
+                    <div class="emoji-item all 节日祝福 bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <img src="images/xiaozu-emoji3.png" alt="小族-文字描述3" class="w-full h-40 object-contain p-4 emoji-scale">
+                        <div class="p-3 text-center">
+                            <h4 class="font-medium text-secondary">富族安康</h4>
+                            <a href="images/xiaozu-emoji3.png" download="小族-富族安康.png" class="mt-2 bg-primary/10 text-primary px-3 py-1 rounded text-sm hover:bg-primary hover:text-white transition-colors inline-block">
+                                下载 <i class="fa fa-download ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 表情包4 -->
+                    <div class="emoji-item all 趣味互动 bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <img src="images/xiaozu-emoji4.png" alt="小族-文字描述4" class="w-full h-40 object-contain p-4 emoji-scale">
+                        <div class="p-3 text-center">
+                            <h4 class="font-medium text-secondary">恭喜发财</h4>
+                            <a href="images/xiaozu-emoji4.png" download="小族-恭喜发财.png" class="mt-2 bg-primary/10 text-primary px-3 py-1 rounded text-sm hover:bg-primary hover:text-white transition-colors inline-block">
+                                下载 <i class="fa fa-download ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 表情包5 -->
+                    <div class="emoji-item all 日常问候 bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <img src="images/xiaozu-emoji5.png" alt="小族-文字描述5" class="w-full h-40 object-contain p-4 emoji-scale">
+                        <div class="p-3 text-center">
+                            <h4 class="font-medium text-secondary">好运莲莲</h4>
+                            <a href="images/xiaozu-emoji5.png" download="小族-好运莲莲.png" class="mt-2 bg-primary/10 text-primary px-3 py-1 rounded text-sm hover:bg-primary hover:text-white transition-colors inline-block">
+                                下载 <i class="fa fa-download ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 表情包6 -->
+                    <div class="emoji-item all 工作办公 bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <img src="images/xiaozu-emoji6.png" alt="小族-文字描述6" class="w-full h-40 object-contain p-4 emoji-scale">
+                        <div class="p-3 text-center">
+                            <h4 class="font-medium text-secondary">谢谢老板</h4>
+                            <a href="images/xiaozu-emoji6.png" download="小族-谢谢老板.png" class="mt-2 bg-primary/10 text-primary px-3 py-1 rounded text-sm hover:bg-primary hover:text-white transition-colors inline-block">
+                                下载 <i class="fa fa-download ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 表情包7 -->
+                    <div class="emoji-item all 节日祝福 bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <img src="images/xiaozu-emoji7.png" alt="小族-文字描述7" class="w-full h-40 object-contain p-4 emoji-scale">
+                        <div class="p-3 text-center">
+                            <h4 class="font-medium text-secondary">薪满意族</h4>
+                            <a href="images/xiaozu-emoji7.png" download="小族-薪满意族.png" class="mt-2 bg-primary/10 text-primary px-3 py-1 rounded text-sm hover:bg-primary hover:text-white transition-colors inline-block">
+                                下载 <i class="fa fa-download ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 表情包8 -->
+                    <div class="emoji-item all 趣味互动 bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <img src="images/xiaozu-emoji8.png" alt="小族-文字描述8" class="w-full h-40 object-contain p-4 emoji-scale">
+                        <div class="p-3 text-center">
+                            <h4 class="font-medium text-secondary">族你发财</h4>
+                            <a href="images/xiaozu-emoji8.png" download="小族-族你发财.png" class="mt-2 bg-primary/10 text-primary px-3 py-1 rounded text-sm hover:bg-primary hover:text-white transition-colors inline-block">
+                                下载 <i class="fa fa-download ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 表情包9（新增） -->
+                    <div class="emoji-item all 日常问候 bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <img src="images/xiaozu-emoji9.png" alt="小族-文字描述9" class="w-full h-40 object-contain p-4 emoji-scale">
+                        <div class="p-3 text-center">
+                            <h4 class="font-medium text-secondary">手舞族蹈</h4>
+                            <a href="images/xiaozu-emoji9.png" download="小族-手舞族蹈.png" class="mt-2 bg-primary/10 text-primary px-3 py-1 rounded text-sm hover:bg-primary hover:text-white transition-colors inline-block">
+                                下载 <i class="fa fa-download ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 表情包10（新增） -->
+                    <div class="emoji-item all 工作办公 bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <img src="images/xiaozu-emoji10.png" alt="小族-文字描述10" class="w-full h-40 object-contain p-4 emoji-scale">
+                        <div class="p-3 text-center">
+                            <h4 class="font-medium text-secondary">知族常乐</h4>
+                            <a href="images/xiaozu-emoji10.png" download="小族-知族常乐.png" class="mt-2 bg-primary/10 text-primary px-3 py-1 rounded text-sm hover:bg-primary hover:text-white transition-colors inline-block">
+                                下载 <i class="fa fa-download ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+ <!-- 表情包下载区（修复下载功能，区分已开发/待开发） -->
+<div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- 下载位置1：新春系列 -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+            <div class="w-32 h-32 bg-light rounded-lg flex items-center justify-center">
+                <!-- 为图片添加点击下载功能 -->
+                <a href="images/xiaozu-qrcode.png" download="小族-新春系列（蛇年）-二维码.png">
+                    <img src="images/xiaozu-qrcode.png" alt="新春系列" class="w-28 h-28 object-contain cursor-pointer hover:opacity-90 transition-opacity">
+                </a>
+            </div>
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold text-primary mb-2">新春系列（蛇年）</h3>
+                <p class="text-secondary mb-4">扫码下载全部小族表情包，一键保存到手机</p>
+                <a href="downloads/xiaozu-emoji-spring.zip" download="小族-新春系列（蛇年）.zip" class="bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors inline-block">
+                    点击图片扫码<i class="fa fa-download ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下载位置2：马年新春系列 -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+            <div class="w-32 h-32 bg-light rounded-lg flex items-center justify-center">
+                <a href="images/xiaozu-qrcode4.png" download="小族-马年新春系列-二维码.png">
+                    <img src="images/xiaozu-qrcode4.png" alt="马年新春系列" class="w-28 h-28 object-contain cursor-pointer hover:opacity-90 transition-opacity">
+                </a>
+            </div>
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold text-primary mb-2">马年新春系列</h3>
+                <p class="text-secondary mb-4">待开发</p>
+                <a href="downloads/xiaozu-emoji-horse-year.zip" download="小族-马年新春系列.zip" class="bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors inline-block">
+                    点击图片扫码<i class="fa fa-download ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下载位置3：日常系列 -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+            <div class="w-32 h-32 bg-light rounded-lg flex items-center justify-center">
+                <a href="images/xiaozu-qrcode2.png" download="小族-日常系列-二维码.png">
+                    <img src="images/xiaozu-qrcode2.png" alt="日常系列" class="w-28 h-28 object-contain cursor-pointer hover:opacity-90 transition-opacity">
+                </a>
+            </div>
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold text-primary mb-2">日常系列</h3>
+                <p class="text-secondary mb-4">扫码下载全部小族表情包，一键保存到手机</p>
+                <a href="downloads/xiaozu-emoji-daily.zip" download="小族-日常系列.zip" class="bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors inline-block">
+                    点击图片扫码<i class="fa fa-download ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下载位置4：日常办公系列 -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+            <div class="w-32 h-32 bg-light rounded-lg flex items-center justify-center">
+                <a href="images/xiaozu-qrcode5.png" download="小族-日常办公系列-二维码.png">
+                    <img src="images/xiaozu-qrcode5.png" alt="日常办公系列" class="w-28 h-28 object-contain cursor-pointer hover:opacity-90 transition-opacity">
+                </a>
+            </div>
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold text-primary mb-2">日常办公系列</h3>
+                <p class="text-secondary mb-4">待开发</p>
+                <a href="downloads/xiaozu-emoji-office.zip" download="小族-日常办公系列.zip" class="bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors inline-block">
+                    点击图片扫码<i class="fa fa-download ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下载位置5：安全系列 -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+            <div class="w-32 h-32 bg-light rounded-lg flex items-center justify-center">
+                <a href="images/xiaozu-qrcode3.png" download="小族-安全系列-二维码.png">
+                    <img src="images/xiaozu-qrcode3.png" alt="安全系列" class="w-28 h-28 object-contain cursor-pointer hover:opacity-90 transition-opacity">
+                </a>
+            </div>
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold text-primary mb-2">安全系列</h3>
+                <p class="text-secondary mb-4">包含扫码下载全部小族表情包，一键保存到手机</p>
+                <a href="downloads/xiaozu-emoji-safety.zip" download="小族-安全系列.zip" class="bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors inline-block">
+                    点击图片扫码<i class="fa fa-download ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下载位置6：最新限定系列 -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+            <div class="w-32 h-32 bg-light rounded-lg flex items-center justify-center">
+                <a href="images/xiaozu-qrcode6.png" download="小族-最新限定系列-二维码.png">
+                    <img src="images/xiaozu-qrcode6.png" alt="小族表情包-最新限定" class="w-28 h-28 object-contain cursor-pointer hover:opacity-90 transition-opacity">
+                </a>
+            </div>
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold text-primary mb-2">最新限定系列</h3>
+                <p class="text-secondary mb-4">待开发</p>
+                <a href="downloads/xiaozu-emoji-limited.zip" download="小族-最新限定系列.zip" class="bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors inline-block">
+                    点击图片扫码<i class="fa fa-download ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 延伸样机专区（已添加 mt-24 向下移动，不遮挡下载区） -->
+<section id="samples" class="py-16 md:py-24 mt-15">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-primary mb-4">小族延伸样机展示</h2>
+            <p class="text-secondary text-lg mb-4">小族在品牌物料、产品场景中的应用展示</p>
+            <div class="w-20 h-1 bg-accent mx-auto"></div>
+        </div>
+    </div>
+</section>
+
+<!-- 样机网格（支持任意比例，非正方形也能显示） -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- 样机1（小族玩偶） -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+        <img src="images/xiaozu-sample1.jpg" alt="小族玩偶" class="w-full h-60 object-cover">
+        <div class="p-6">
+            <h3 class="text-xl font-bold text-primary mb-2">小族玩偶</h3>
+            <p class="text-secondary mb-4">
+                可爱的小族玩偶，增强品牌认同感和团队凝聚力。
+            </p>
+            <a href="xiaozu-doll-detail.html" class="bg-primary/10 text-primary px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-colors inline-block">
+                查看详情 <i class="fa fa-arrow-right ml-1"></i>
+            </a>
+        </div>
+    </div>
+    <!-- 样机2（产品发布会样机） -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+        <img src="images/xiaozu-sample2.jpg" alt="小族盲盒" class="w-full h-60 object-cover">
+        <div class="p-6">
+            <h3 class="text-xl font-bold text-primary mb-2">盲盒款式</h3>
+            <p class="text-secondary mb-4">
+                小族作为大族激光吉祥物，将会推出各种盲盒款式、出现先宣传物料当中。
+            </p>
+            <a href="xiaozu-conference-detail.html" class="bg-primary/10 text-primary px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-colors inline-block">
+                查看详情 <i class="fa fa-arrow-right ml-1"></i>
+            </a>
+        </div>
+    </div>
+    <!-- 样机3（周边礼品样机） -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+        <img src="images/xiaozu-sample3.jpg" alt="小族-周边礼品样机" class="w-full h-60 object-cover">
+        <div class="p-6">
+            <h3 class="text-xl font-bold text-primary mb-2">周边礼品样机</h3>
+            <p class="text-secondary mb-4">
+                小族形象应用于马克杯、笔记本、钥匙扣等周边礼品，传递品牌温度。
+            </p>
+            <a href="xiaozu-merch-detail.html" class="bg-primary/10 text-primary px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-colors inline-block">
+                查看详情 <i class="fa fa-arrow-right ml-1"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+</section>
+<!-- 联系我们（飞书表单跳转） -->
+<section id="contact" class="py-16 md:py-24 bg-primary/5">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-primary mb-4">定制申请</h2>
+            <p class="text-secondary text-lg mb-4">如需定制小族吉祥物相关周边或表情包，欢迎留言反馈</p>
+            <div class="w-20 h-1 bg-accent mx-auto"></div>
+        </div>
+
+        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6 md:p-8 text-center">
+            <!-- 仅保留飞书表单跳转按钮 -->
+            <p class="text-secondary mb-8">请点击下方按钮，前往飞书表单提交定制需求</p>
+            
+            <a href="https://d07rwh6g0bl.feishu.cn/share/base/form/shrcnzk6vIZ084VSHKBnV2egdsh" 
+               target="_blank" 
+               class="w-full inline-block bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg">
+                前往飞书表单提交 <i class="fa fa-external-link ml-1"></i>
+            </a>
+
+            <!-- 表格查看入口 -->
+            <div class="mt-6 text-sm text-secondary">
+                <a href="https://d07rwh6g0bl.feishu.cn/share/base/form/shrcnzk6vIZ084VSHKBnV2egdsh" 
+                   target="_blank" 
+                   class="text-primary hover:underline">
+                    点击查看已提交的申请数据 <i class="fa fa-table ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+                            <i class="fa fa-star-o text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold">小族吉祥物</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        大族激光品牌文化新符号，科技与萌趣的融合
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">快速链接</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-accent transition-colors">首页</a></li>
+                        <li><a href="#intro" class="hover:text-accent transition-colors">吉祥物介绍</a></li>
+                        <li><a href="#emoji" class="hover:text-accent transition-colors">表情包专区</a></li>
+                        <li><a href="#samples" class="hover:text-accent transition-colors">延伸样机</a></li>
+                    </ul>
+                </div>
+            <div>
+    <h4 class="text-lg font-bold mb-4">品牌矩阵</h4>
+    <ul class="space-y-2 text-gray-400">
+        <li>
+            <a href="https://www.hanslaser.com" target="_blank" class="hover:text-accent transition-colors flex items-center gap-1">
+                <i class="fa fa-globe"></i> 大族激光官网
+            </a>
+        </li>
+        <li>
+            <!-- 公众号二维码：点击后打开二维码图片 -->
+            <a href="images/hanslaser-weixin-channel.png" target="_blank" class="hover:text-accent transition-colors flex items-center gap-1">
+                <i class="fa fa-weixin"></i> 大族激光公众号
+            </a>
+        </li>
+        <li>
+            <!-- 视频号二维码：点击后打开二维码图片 -->
+            <a href="images/hanslaser-weixin-official.png" target="_blank" class="hover:text-accent transition-colors flex items-center gap-1">
+                <i class="fa fa-play-circle"></i>  大族激光视频号
+            </a>
+        </li>
+        <li>
+            <a href="https://weibo.com/u/7735692953" target="_blank" class="hover:text-accent transition-colors flex items-center gap-1">
+                <i class="fa fa-weibo"></i> 大族激光微博
+            </a>
+        </li>
+    </ul>
+</div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">联系我们</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-phone"></i>
+                            <span>0086-135-9039-9057 / 0755-86727483</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-envelope"></i>
+                            <span>brand@hanslaser.com</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-map-marker"></i>
+                            <span>广东省深圳市南山区深南大道9988号</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                © 2025 大族激光科技产业集团股份有限公司 版权所有
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-colors hidden">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // 表情包分类筛选
+        const emojiTabs = document.querySelectorAll('.emoji-tab');
+        const emojiItems = document.querySelectorAll('.emoji-item');
+        emojiTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // 移除所有标签的激活状态
+                emojiTabs.forEach(t => {
+                    t.classList.remove('active', 'bg-primary', 'text-white');
+                    t.classList.add('bg-white', 'text-secondary');
+                });
+                // 添加当前标签的激活状态
+                tab.classList.add('active', 'bg-primary', 'text-white');
+                tab.classList.remove('bg-white', 'text-secondary');
+                
+                // 筛选表情包
+                const category = tab.textContent.trim();
+                emojiItems.forEach(item => {
+                    if (category === '全部' || item.classList.contains(category)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // 回到顶部按钮
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('hidden');
+            } else {
+                backToTop.classList.add('hidden');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // 关闭移动端菜单
+                    mobileMenu.classList.add('hidden');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // 图片懒加载（优化性能）
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyImages = document.querySelectorAll("img");
+            if ("IntersectionObserver" in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const image = entry.target;
+                            image.classList.add('opacity-100');
+                            image.classList.remove('opacity-0');
+                            imageObserver.unobserve(image);
+                        }
+                    });
+                });
+                lazyImages.forEach(image => {
+                    image.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                    imageObserver.observe(image);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
